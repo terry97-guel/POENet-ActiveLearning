@@ -1,2 +1,2 @@
-# POENet-ActiveLearning
-Active Leaning Framework Implemented to POENet
+# POENet-2d
+POENet for 2-dimensional input

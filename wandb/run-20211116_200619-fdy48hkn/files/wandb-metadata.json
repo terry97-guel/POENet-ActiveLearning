@@ -1,0 +1,27 @@
+{
+    "os": "Linux-5.4.0-77-generic-x86_64-with-glibc2.27",
+    "python": "3.9.6",
+    "heartbeatAt": "2021-11-16T11:06:20.548243",
+    "startedAt": "2021-11-16T11:06:19.396266",
+    "docker": null,
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpu_count": 4,
+    "cpu_count": 12,
+    "cuda": null,
+    "args": [
+        "--save_dir=./output/1116",
+        "--wandb"
+    ],
+    "state": "running",
+    "program": "/home/taerim/sOftrobot/POENet-2d/train.py",
+    "codePath": "train.py",
+    "git": {
+        "remote": "https://github.com/terry97-guel/POENet-2d.git",
+        "commit": "7ab85bfdfd411b355e81b4260e651bfafb84e05f"
+    },
+    "email": "taerimyoon@korea.ac.kr",
+    "root": "/home/taerim/sOftrobot/POENet-2d",
+    "host": "rilab2-All-Series",
+    "username": "taerim",
+    "executable": "/home/taerim/.pyenv/versions/poenet/bin/python"
+}

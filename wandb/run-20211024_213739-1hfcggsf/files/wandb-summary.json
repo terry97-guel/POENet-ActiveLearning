@@ -1,0 +1,1 @@
+{"TrainLoss": 0.03882491588592529, "TestLoss": 0.03930108043873175, "TimePerEpoch": 7.330054998397827, "_runtime": 370, "_timestamp": 1635079429, "_step": 49, "_wandb": {"runtime": 371}}
