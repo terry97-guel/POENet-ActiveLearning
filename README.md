@@ -1,2 +1,2 @@
-# POENet-2d
-POENet for 2-dimensional input
+# Naive-Motor2Pos
+FC layer to fit Motor controll to Position

@@ -1,0 +1,30 @@
+{
+    "os": "Linux-5.4.0-77-generic-x86_64-with-glibc2.27",
+    "python": "3.9.6",
+    "heartbeatAt": "2021-10-24T11:00:36.677696",
+    "startedAt": "2021-10-24T11:00:35.622493",
+    "docker": null,
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpu_count": 4,
+    "cpu_count": 12,
+    "cuda": null,
+    "args": [
+        "--save_dir=./output/1024",
+        "--epochs=50",
+        "--wandb",
+        "--device=3",
+        "--pname=Naive2Pos"
+    ],
+    "state": "running",
+    "program": "/home/taerim/sOftrobot/Naive-Motor2Pos/train.py",
+    "codePath": "train.py",
+    "git": {
+        "remote": "https://github.com/terry97-guel/Naive-Motor2Pos.git",
+        "commit": "674368bb8dc3793cdde7b22843836292bb037d85"
+    },
+    "email": "taerimyoon@korea.ac.kr",
+    "root": "/home/taerim/sOftrobot/Naive-Motor2Pos",
+    "host": "rilab2-All-Series",
+    "username": "taerim",
+    "executable": "/home/taerim/.pyenv/versions/poenet/bin/python"
+}

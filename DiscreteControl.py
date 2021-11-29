@@ -8,6 +8,8 @@ from utils.curve import *
 from loss import *
 from torch.autograd.functional import jacobian
 
+Pos_norm2 = Get_Loss_Function().Pos_norm2
+
 def input2lossfn(model,target_pos):
     def input2loss(input):
         output = model(input)
@@ -16,11 +18,10 @@ def input2lossfn(model,target_pos):
     return input2loss
 
 def main(args):
-    weight = torch.load('./output/1116/checkpoint_100.pth')
-    n_joint = weight['n_joint']
+    weight = torch.load(args.data_path)
     input_dim = weight['input_dim']
 
-    model = Model(n_joint, input_dim)
+    model = Model(input_dim)
     model.load_state_dict(weight['state_dict'])
 
     a = args.a
@@ -46,12 +47,11 @@ def main(args):
         input[0][1] = input[0][1] -args.ny * jacob[0][1]
         input[0][0].clamp_(0.5,3.5)
         input[0][1].clamp_(0.2,3.2)
-        
 
     OutputTxt = np.array([])
-    OutputTxt = np.append(OutputTxt, t2p(model(input)).detach().numpy())
+    OutputTxt = np.append(OutputTxt, model(input).detach().numpy())
     OutputTxt = np.append(OutputTxt, input.squeeze(0).numpy())
-    # np.savetxt(args.save_dir,OutputTxt)
+    np.savetxt(args.save_dir,OutputTxt)
     print(OutputTxt)
     print(target_pos)
     
@@ -62,11 +62,12 @@ if __name__ == '__main__':
                     help='control input #1')
     args.add_argument('--k', default= 3.0, type=float,
                     help='control input #2')
-    args.add_argument('--nx', default= 0.05, type=float,
+    args.add_argument('--nx', default= 0.01, type=float,
                     help='step size for input #1')
-    args.add_argument('--ny', default= 0.05, type=float,
+    args.add_argument('--ny', default= 0.01, type=float,
                     help='step size for input #2')
     args.add_argument('--save_dir', default='./2Visualize')
+    args.add_argument('--data_path', default='./output/1117/checkpoint_50.pth')
     args = args.parse_args()
     main(args)
 
